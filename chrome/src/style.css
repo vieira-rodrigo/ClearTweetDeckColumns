@@ -1,0 +1,20 @@
+.clear-td-ext{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px !important;
+  background: #1da1f2 !important;
+  color: #FFF !important;
+  line-height: 1em;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 3px 10px ;
+  cursor: pointer;
+}
+
+.clear-td-ext:hover{
+  background-color: #005fd1 !important;
+  text-decoration: none !important;
+}
