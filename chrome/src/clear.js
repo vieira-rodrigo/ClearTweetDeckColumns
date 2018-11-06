@@ -3,7 +3,7 @@ let SELECTOR_OPTIONS = "a[data-action=options]";
 let SELECTOR_BACK = "js-column-back";
 let SELECTOR_CLEAR_LINK = "button[data-action=clear]";
 let SELECTOR_ITENS = "stream-item ";
-let SELECTOR_BUTTON_PARENT = "js-column-nav-list";
+let SELECTOR_BUTTON_PARENT = "js-column-nav-scroller";
 let BTN_CLEAR_CLASS = "clear-td-ext";
 
 let limpar = ()=>{
