@@ -6,7 +6,7 @@ let SELECTOR_ITENS = "stream-item ";
 let SELECTOR_BUTTON_PARENT = "js-column-nav-scroller";
 let BTN_CLEAR_CLASS = "clear-td-ext";
 
-let limpar = ()=>{
+function limpar(){
   let listElementPrincipal = Array.from(document.getElementsByTagName(SELECTOR_ELEMENTO_PRICIPAL));
   let ref = 0;
   listElementPrincipal.map((element) =>{
@@ -23,24 +23,28 @@ let limpar = ()=>{
   });
 }
 
-let createButton = ()=>{
+function createButton(){
   reset();
   let btnClear = document.createElement("A");
   let btnParent = document.getElementsByClassName(SELECTOR_BUTTON_PARENT)[0];
-  btnClear.className = BTN_CLEAR_CLASS
-  btnClear.innerHTML = '<i class="icon icon-trash"></i>';
-  btnClear.setAttribute("title", "Clear All Columns");
-  btnClear.onclick = limpar;
-  btnParent.appendChild(btnClear, btnParent.firstChild);
+  if(btnParent){
+    btnClear.className = BTN_CLEAR_CLASS
+    btnClear.innerHTML = '<i class="icon icon-trash"></i>';
+    btnClear.setAttribute("title", "Clear All Columns");
+    btnClear.onclick = limpar;
+    btnParent.appendChild(btnClear, btnParent.firstChild);
+  }else{
+    setTimeout(createButton, 2000);
+  }
 }
 
-let reset = () => {
+function reset(){
   let btns = Array.from(document.getElementsByClassName(BTN_CLEAR_CLASS));
   if(btns)
     btns.map((btn) => btn.remove());
 }
 
-let setUp = ()=> {
+function setUp(){
   if(!window.location.toString().includes("tweetdeck.twitter")) return;
   let body = document.getElementsByTagName("body")[0];
   body.onkeyup = (event)=>{if(event.which == 46) limpar()};
