@@ -3,7 +3,7 @@ let SELECTOR_OPTIONS = "a[data-action=options]";
 let SELECTOR_BACK = "js-column-back";
 let SELECTOR_CLEAR_LINK = "button[data-action=clear]";
 let SELECTOR_ITENS = "stream-item ";
-let SELECTOR_BUTTON_PARENT = "js-column-nav-scroller";
+let SELECTOR_BUTTON_PARENT = "app-navigator";
 let BTN_CLEAR_CLASS = "clear-td-ext";
 
 function limpar(){
@@ -32,7 +32,7 @@ function createButton(){
     btnClear.innerHTML = '<i class="icon icon-trash"></i>';
     btnClear.setAttribute("title", "Clear All Columns");
     btnClear.onclick = limpar;
-    btnParent.appendChild(btnClear, btnParent.firstChild);
+    btnParent.prepend(btnClear);
   }else{
     setTimeout(createButton, 2000);
   }
